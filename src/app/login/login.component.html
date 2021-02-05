@@ -1,0 +1,34 @@
+<div >
+    <header>
+        My Bookings
+    </header>
+</div>
+<div class="text-center">
+</div><br>
+<form  class="form-group" [formGroup]='form'  >
+    <h3><span> Login</span></h3><br>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email Id" formControlName='uname'>
+         <div *ngIf='submitted && f.uname.errors' style="color: red;">
+        <p *ngIf='submitted && f.uname.errors.required'>
+            Email id is required
+        </p>
+    </div>
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" placeholder=" Password"  formControlName='pwd' >
+         <div *ngIf='submitted && f.pwd.errors' style="color: red;">
+        <p *ngIf='submitted && f.pwd.errors.required'>
+            password is required
+        </p>
+    </div>
+        
+    </div>
+    <button type="button" class="btn btn-block" (click)='login()'>Login</button>
+</form>
+<footer>
+    <div>
+        <img src="\assets\per.png" class="logo" align="left" >
+        <span  class="text-logo"> Privacy Notice | Cookie Policy | Terms of Use © 2021 Persistent Systems</span>
+    </div>
+</footer>
