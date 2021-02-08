@@ -1,214 +1,217 @@
-<div>
-  <header>
-    My Bookings
-    <span class="hed">Employee</span>
-    <span class="float"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;
-      <i class="fas fa-user"></i>
-    </span>
+<div class="body-tag">
+  <div>
+    <header>
+      My Bookings
+      <span class="hed">Employee</span>
+      <span class="float"><i class="fas fa-bell"></i>&nbsp;&nbsp;&nbsp;
+        <i class="fas fa-user"></i>
+      </span>
 
-  </header>
+    </header>
 
-</div><br>
-<div>
-  <button type="button" class="btn btn" style="float: right;" data-toggle="modal" data-target="#myModal">Add New
-    Employee</button>
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
+  </div><br>
+  <div class="bg-color">
+    <button type="button" class="btn1 btn " style="float: right;" data-toggle="modal" data-target="#myModal">Add New
+      Employee</button>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Add New Employee</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Add New Employee</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
 
-        <!-- Modal body -->
-        <div class="modal-body">
-          <div class="p-3">
-            <form [formGroup]="detailsForm">
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="p-3">
+              <form [formGroup]="detailsForm">
 
-              <label>First Name <span class="mandate">*</span></label>
-              <input class="form-control" formControlName="firstName">
-              <div *ngIf="detailsForm.controls.firstName.touched && detailsForm.controls.firstName.errors">
-                <div *ngIf="detailsForm.controls.firstName.errors.required" class="text-danger">First Name
+                <label>First Name <span class="mandate">*</span></label>
+                <input class="form-control" formControlName="firstName">
+                <div *ngIf="detailsForm.controls.firstName.touched && detailsForm.controls.firstName.errors">
+                  <div *ngIf="detailsForm.controls.firstName.errors.required" class="text-danger">First Name
                     is required
-                    </div>
                   </div>
+                </div>
 
-              <label>Last Name <span class="mandate">*</span></label>
-              <input class="form-control" formControlName="lastName">
-              <div *ngIf="detailsForm.controls.lastName.touched && detailsForm.controls.lastName.errors">
-                <div *ngIf="detailsForm.controls.lastName.errors.required" class="text-danger">Last Name
+                <label>Last Name <span class="mandate">*</span></label>
+                <input class="form-control" formControlName="lastName">
+                <div *ngIf="detailsForm.controls.lastName.touched && detailsForm.controls.lastName.errors">
+                  <div *ngIf="detailsForm.controls.lastName.errors.required" class="text-danger">Last Name
                     is required
-                    </div>
                   </div>
+                </div>
 
-              <label>ID <span class="mandate">*</span></label>
-              <input class="form-control" type="number" formControlName="Id">
-              <div *ngIf="detailsForm.controls.Id.touched && detailsForm.controls.Id.errors">
-                <div *ngIf="detailsForm.controls.Id.errors.required" class="text-danger">Id 
+                <label>ID <span class="mandate">*</span></label>
+                <input class="form-control" type="number" formControlName="Id">
+                <div *ngIf="detailsForm.controls.Id.touched && detailsForm.controls.Id.errors">
+                  <div *ngIf="detailsForm.controls.Id.errors.required" class="text-danger">Id
                     is required
-                    </div>
                   </div>
+                </div>
 
 
-              <label>Gender Name <span class="mandate">*</span></label>
-              <select class="form-control" formControlName="gender">
-  
+                <label>Gender Name <span class="mandate">*</span></label>
+                <select class="form-control" formControlName="gender">
 
-                <option hidden selected value="">--Select Gender--</option>
-                <option value="male">male</option>
-                <option value="Female">female</option>
-                
 
-              </select>
-              <div *ngIf="detailsForm.controls.gender.touched && detailsForm.controls.gender.errors">
-                <div *ngIf="detailsForm.controls.gender.errors.required" class="text-danger">Select Gender
-                    
-                    </div>
+                  <option hidden selected value="">--Select Gender--</option>
+                  <option value="male">male</option>
+                  <option value="Female">female</option>
+
+
+                </select>
+                <div *ngIf="detailsForm.controls.gender.touched && detailsForm.controls.gender.errors">
+                  <div *ngIf="detailsForm.controls.gender.errors.required" class="text-danger">Select Gender
+
                   </div>
+                </div>
 
-              <label>Grade <span class="mandate">*</span></label>
-              <select class="form-control" formControlName="grade">
-                <option hidden selected value="">--Select Grade--</option>
-                <option value="18">3.1x</option>
-                <option value="19">3.2x</option>
-                <option value="20">20</option>
+                <label>Grade <span class="mandate">*</span></label>
+                <select class="form-control" formControlName="grade">
+                  <option hidden selected value="">--Select Grade--</option>
+                  <option value="18">3.1x</option>
+                  <option value="19">3.2x</option>
+                  <option value="20">20</option>
 
-              </select>
-               <div *ngIf="detailsForm.controls.grade.touched && detailsForm.controls.grade.errors">
-                <div *ngIf="detailsForm.controls.grade.errors.required" class="text-danger">Select Grade
-                    
-                    </div>
-                  </div><br>
-              
-              
+                </select>
+                <div *ngIf="detailsForm.controls.grade.touched && detailsForm.controls.grade.errors">
+                  <div *ngIf="detailsForm.controls.grade.errors.required" class="text-danger">Select Grade
+
+                  </div>
+                </div><br>
 
 
-              <div class="btn-b">
-                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>&nbsp;&nbsp;
-                <button class="btn btn-secondary" (click)="savedata()" data-dismiss="modal" [disabled]="detailsForm.invalid" >Add</button>
-              </div>
-            </form>
+
+
+                <div class="btn-b">
+                  <button class="btn warning button1" data-dismiss="modal">Cancel</button>&nbsp;&nbsp;
+                  <button class="btn danger butt1" (click)="savedata()" data-dismiss="modal"
+                    [disabled]="detailsForm.invalid">Add</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div><br>
+    <br>
 
-<div>
-  <div class="modal" id="myModal2">
-    <div class="modal-dialog">
-      <div class="modal-content">
+    <div>
+      <div class="modal" id="myModal2">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Employee</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="p-3">
-            <form [formGroup]="detailsForm">
-              <label>First Name</label>
-              <input class="form-control" formControlName="firstName">
-              <label>Last Name</label>
-              <input class="form-control" formControlName="lastName">
-              <label>ID</label>
-              <input class="form-control" type="number" formControlName="Id">
-              <label>Gender Name</label>
-              <select class="form-control" formControlName="gender">
-                <option hidden selected value="">--Select Gender--</option>
-                <option value="male">male</option>
-                <option value="Female">female</option>
+            <div class="modal-header">
+              <h4 class="modal-title">Edit Employee</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="p-3">
+                <form [formGroup]="detailsForm">
+                  <label>First Name</label>
+                  <input class="form-control" formControlName="firstName">
+                  <label>Last Name</label>
+                  <input class="form-control" formControlName="lastName">
+                  <label>ID</label>
+                  <input class="form-control" type="number" formControlName="Id">
+                  <label>Gender Name</label>
+                  <select class="form-control" formControlName="gender">
+                    <option hidden selected value="">--Select Gender--</option>
+                    <option value="male">male</option>
+                    <option value="Female">female</option>
 
-              </select>
-              <label>Grade</label>
-              <select class="form-control" formControlName="grade">
-                <option hidden selected value="">--Select Grade--</option>
-                <option value="18">3.1x</option>
-                <option value="19">3.2x</option>
-                <option value="20">20</option>
+                  </select>
+                  <label>Grade</label>
+                  <select class="form-control" formControlName="grade">
+                    <option hidden selected value="">--Select Grade--</option>
+                    <option value="18">3.1x</option>
+                    <option value="19">3.2x</option>
+                    <option value="20">20</option>
 
-              </select><br>
+                  </select><br>
 
 
-              <div class="btn-b">
-                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>&nbsp;&nbsp;
-                <button class="btn btn-secondary" (click)="updatedata()" data-dismiss="modal">Update</button>
+                  <div class="btn-b">
+                    <button class="btn warning button1" data-dismiss="modal">Cancel</button>&nbsp;&nbsp;
+                    <button class="btn btn-secondary" (click)="updatedata()" data-dismiss="modal">Update</button>
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div><br>
-<div>
+    </div><br>
+    <div>
 
-  <div class="modal" id="myModal3">
-    <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal" id="myModal3">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Confirmation</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body">
-          <div class="p-3">
-
-            <p>Are you sure you want to delete? This action can not be undone</p>
-
-            <div class="btn-b">
-              <button class="btn btn-primary" data-dismiss="modal">No</button>&nbsp;&nbsp;
-              <button class="btn btn-secondary" data-dismiss="modal" (click)="deleteEmp()">Yes</button>
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Confirmation</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="p-3">
+
+                <p>Are you sure you want to delete? This action can not be undone</p>
+
+                <div class="btn-b">
+                  <button class="btn warning button1" data-dismiss="modal">No</button>&nbsp;&nbsp;
+                  <button class="btn danger butt1" data-dismiss="modal" (click)="deleteEmp()">Yes</button>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <p>Employee Data</p>
-  <table class="table table-bordered m-2">
-    <thead class="text-center">
+      <p class="emp"><b>Employee Data</b></p>
+      <table class="table table-borderless">
+        <thead class="text-center">
+      
+          <th>Frist Name</th>
+          <th>Last Name</th>
+          <th>Id</th>
+          <th>Gender</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </thead>
+        <tbody class="text-center">
+          <tr *ngFor="let data of tabledataarray | paginate: { itemsPerPage: 5, currentPage: currentpage }">
 
-      <th>Frist Name</th>
-      <th>Last Name</th>
-      <th>Id</th>
-      <th>Gender</th>
-      <th>Grade</th>
-      <th>Actions</th>
-    </thead>
-    <tbody class="text-center">
-      <tr *ngFor="let data of tabledataarray | paginate: { itemsPerPage: 5, currentPage: currentpage }">
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.Id}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.grade}}</td>
+            <td>
+              <!-- <div class="dropdown dropleft"> -->
+              <i class="fas fa-ellipsis-v cursor-pointer" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" (click)="moreAction()">
 
-        <td>{{data.firstName}}</td>
-        <td>{{data.lastName}}</td>
-        <td>{{data.Id}}</td>
-        <td>{{data.gender}}</td>
-        <td>{{data.grade}}</td>
-        <td>
-          <!-- <div class="dropdown dropleft"> -->
-          <i class="fas fa-ellipsis-v " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false" (click)="moreAction()">
+              </i>
+              <div class="dropdown-menu">
+                <a class="dropdown-item cursor-pointer">View</a>
+                <a class="dropdown-item cursor-pointer" (click)="showEditList(data)" data-toggle="modal"
+                  data-target="#myModal2">Edit</a>
+                <a class="dropdown-item cursor-pointer">Activate/Deactivate</a>
+                <!-- <a class="dropdown-item"  (click)="deletedata(data.id)">Delete</a> -->
+                <a class="dropdown-item cursor-pointer" data-toggle="modal" data-target="#myModal3"
+                  (click)="deletedata(data.id)">Delete</a>
+              </div>
 
-          </i>
-          <div class="dropdown-menu">
-            <a class="dropdown-item">View</a>
-            <a class="dropdown-item" (click)="showEditList(data)" data-toggle="modal" data-target="#myModal2">Edit</a>
-            <a class="dropdown-item">Activate/Deactivate</a>
-            <!-- <a class="dropdown-item"  (click)="deletedata(data.id)">Delete</a> -->
-            <a class="dropdown-item" data-toggle="modal" data-target="#myModal3"
-              (click)="deletedata(data.id)">Delete</a>
-          </div>
+              <!-- </div> -->
 
-          <!-- </div> -->
-
-          <!-- <td>
+              <!-- <td>
         <div class="showView" *ngIf="openModal" style="border: 1px solid blue; width: 150px; margin-right: 32px;">
           <div>View</div>
           <div style="cursor: pointer;" (click)="showEditList()">Edit</div>
@@ -216,17 +219,18 @@
           <div>Delete</div>
         </div>
       </td> -->
-      </tr>
-    </tbody>
-  </table>
-  <!-- <ngx-select-pagination
+          </tr>
+        </tbody>
+      </table>
+      <!-- <ngx-select-pagination
   [totalItems]="100" 
   [itemsPerPage]="5" 
   [(ngModel)]="currentPage"
   (pageChanged)="onPageChanged($event)">
 </ngx-select-pagination> -->
-  <pagination-controls (pageChange)="pagechange((currentpage = $event))" class="float-right"></pagination-controls>
-
+      <pagination-controls (pageChange)="pagechange((currentpage = $event))" class="float-right"></pagination-controls>
+    </div>
+  </div>
   <footer>
     <div>
       <img src="\assets\per.png" class="logo" align="left">

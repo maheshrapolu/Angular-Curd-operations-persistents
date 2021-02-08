@@ -1,4 +1,5 @@
 <div >
+<div class="body-tag">
     <header>
         My Bookings
     </header>
@@ -24,11 +25,13 @@
     </div>
         
     </div>
-    <button type="button" class="btn btn-block" (click)='login()'>Login</button>
+    <button type="button" class="btn btn-block loginBtn" (click)='login()' [disabled]="form.invalid">Login</button>
 </form>
+</div>
 <footer>
     <div>
         <img src="\assets\per.png" class="logo" align="left" >
         <span  class="text-logo"> Privacy Notice | Cookie Policy | Terms of Use © 2021 Persistent Systems</span>
     </div>
+
 </footer>

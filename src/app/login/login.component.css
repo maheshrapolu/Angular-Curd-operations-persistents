@@ -43,3 +43,9 @@ button{
     background-color: #e15000;
     color: white;
 }
+.body-tag{
+    background-color: lightblue;
+}
+.loginBtn:hover{
+color: white !important;
+}

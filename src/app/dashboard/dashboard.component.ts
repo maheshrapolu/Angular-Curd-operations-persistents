@@ -20,10 +20,10 @@ export class DashboardComponent implements OnInit {
 
 
   detailsForm=new FormGroup({
-    id:new FormControl('',),
+    id:new FormControl(''),
     firstName: new FormControl('',Validators.required),
     lastName: new FormControl('',Validators.required),
-    Id: new FormControl('',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[6-9]{1}[0-9]{9}$")]),
+    Id: new FormControl('',[Validators.required, Validators.pattern("^[0-9]*$")]),
     gender: new FormControl('',Validators.required),
     grade: new FormControl('',Validators.required),
   }) 
@@ -83,7 +83,16 @@ export class DashboardComponent implements OnInit {
   deletedata(id:any){
  this.deleteId=id
 }
-  updatedata(){
+  updatedata(typeIcon = TYPE.SUCCESS, timerProgressBar: boolean = false){
+    Swal.fire({
+      toast: true,
+      position: 'top',
+      showConfirmButton: false,
+      icon: typeIcon,
+      timerProgressBar,
+      timer: 2000,
+      title: 'Employee updated Successfully'
+    })
     this.service.idbasedupdate(this.detailsForm.value).subscribe(res=>{
       this.tabledata();
       this.detailsForm.reset();
